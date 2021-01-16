@@ -1,0 +1,119 @@
+/* Ray Martin 4/5/20 */
+
+#wrapper {
+    font-family: Georgia, Serif;
+    color: #444;
+    width: 70%;
+    margin: 0 auto;
+}
+    
+#bodyStart { /* Opening Landing Page Style Class */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+main {
+    position: relative;
+    overflow: scroll;
+    margin: 0 auto 100px auto; /* Allows main content to be seen above fixed footer */
+}
+
+a {
+    color: #444;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    padding: .5em;
+    border-radius: 7px;
+}
+
+#welcome { 
+    margin: 100px auto 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Hidden Sections of Content */
+h1, #objectives, #courseObjectives, #describeDOM, #nodes, #BOM, #browserInfo, #BOMbutton, #formsButton, #formSection, 
+#objectButton, #objectSection, #stringButton, #stringSection, #debugButton, #debugSection, #securityButton,
+#securitySection, #finishedButton, #finishedSection {
+    display: none;
+}
+
+#contentOutline {
+    text-align: left;
+}
+
+#closeDiv {
+    font-size: .65em;
+    text-align: right;
+}
+
+footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 70%;
+}
+
+footer p {
+    font-size: .8em;
+}
+footer ul {
+    text-align: center;
+    margin: 0 auto;
+    padding: .5em 0 0 0;
+
+}
+
+footer li {
+    display: inline;
+    list-style: none;
+    padding: 0 .5em;
+    z-index: 1;
+}
+
+/* Tablet Size Screen */
+@media only screen and (max-width: 64em) {
+
+    #wrapper {
+        width: 90%;
+    }
+
+    footer {
+        width: 90%;
+    }
+}
+
+/* Mobile Size Screen */
+@media only screen and (max-width: 37.5em) {
+    #wrapper {
+        width: 98%;
+        margin: 20px auto 0 auto;   
+    }
+
+    #bodyStart {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+
+    #welcome {
+        padding: 0 1em;
+        font-size: 1.25em;
+    }
+
+    footer {
+        width: 98%;
+    }
+}

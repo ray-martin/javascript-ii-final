@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Ray Martin 4/5/20 -->
+<html lang="en">
+    <head>
+        <title>Web 124 Final Project</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="wrapper">
+    <header>
+        <h1>Web 124 Final Project</h1>
+    </header>
+    <main>
+        <div id="closeDiv">
+            <p><a href=" " id="closeWindow">Close</a></p>
+            </div>
+            <section id="contentOutline">
+                <h2>Content Outline and Competencies:</h2>
+                <ol type="I">
+                    <li>DOM
+                        <ol type="A">
+                            <li>Describe the DOM.</li>
+                            <li>Modify HTML elements.</li>
+                            <li>Open and close windows and tabs.</li>
+                            <li>Utilize the History, Location, Navigator and Screen objects.</li>
+                        </ol>
+                    </li>
+                    <li>HTML Document Nodes
+                        <ol type="A">
+                            <li>Add document nodes.</li>
+                            <li>Remove document nodes.</li>
+                        </ol>
+                    </li>
+                    <li>BOM
+                        <ol type="A">
+                            <li>Open and close windows.</li>
+                            <li>Access with the History object.</li>
+                            <li>Use the Location object.</li>
+                            <li>Use the Navigator object.</li>
+                            <li>Manipulate the Screen object.</li>
+                        </ol>
+                    </li>
+                    <li>Forms
+                        <ol type="A">
+                            <li>Improve form usability.</li>
+                            <li>Program custom form validation.</li>
+                            <li>Identify data passed through a query string.</li>
+                        </ol>
+                    </li>
+                    <li>JavaScript Object-Oriented Programming	
+                        <ol type="A">
+                            <li>Explain the principles of object-oriented programming.</li>
+                            <li>Create and use objects using the Date class.</li>
+                            <li>Create and use objects using the Number class.</li>
+                            <li>Create and use objects using the Math class.</li>
+                            <li>Define custom objects.</li>
+                        </ol>
+                    </li>
+                    <li>Strings and Arrays
+                        <ol type="A">
+                            <li>Find, extract, combine and compare strings.</li>
+                            <li>Code regular expressions.</li>
+                            <li>Find, extract, sort and combine arrays.</li>
+                        </ol>
+                    </li>
+                    <li>Validation and Debugging
+                        <ol type="A">
+                            <li>Use lint to improve and fix code.</li>
+                            <li>Write error handling code.</li>
+                            <li>Use debugger windows from all major browsers.</li>
+                        </ol>
+                    </li>
+                    <li>Security
+                        <ol type="A">
+                            <li>Write code to store state information.
+                                <ol type="1">
+                                    <li>Query strings</li>
+                                    <li>Hidden form fields</li>
+                                </ol>
+                            </li>
+                        <li>Investigate and apply current security holes and techniques.</li>
+                    </ol>
+                </li>
+                </ol>
+            </section>
+    </main>
+    </div>
+    <script>
+        function startup() {
+            let foot = document.getElementsByTagName("footer")[0];
+            let body = document.getElementsByTagName("body")[0];
+            body.removeAttribute("id");
+        }
+        startup();
+
+        let closeWindow = document.getElementById('closeWindow');
+        function closeIt() {
+            window.close();
+        }
+        closeWindow.addEventListener('click', closeIt);
+    </script>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!-- Ray Martin 4/5/20 -->
+<html lang="en">
+<head>
+        <title>Web 124 Final Project</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body id="bodyStart">
+        <div id="wrapper">
+        <header>
+            <h1>Web 124 Final Project</h1>
+        </header>
+
+    <!-- Assignment
+           http://students.jccc.edu/lisalfri/web124/124Projects/FINAL-Option2/finalproject.html
+        1. Review the course objectives and outline for WEB 124 JavaScript II, listed below.
+        2. Watch applicable youtubes.
+        3. Create a web page listing the eight objectives for the course and a demonstration of your knowledge for each objective 
+            using an HTML button and a meaningful JavaScript function of at least 4 statements and event listener for each objective. 
+            The course objectives and course outline (which details each course objective) is also provided below as a guide.
+        4. Explain the purpose of each function in an English paragraph for each objective.
+        5. Note that you do not need to demonstrate understanding of every item in the course outline, but the outline will give you some ideas. 
+           Every student's final project will be a unique example of their knowledge within that course objective.
+        6. Complete the project by building a single semantic, validated, spell-checked web page. Apply a linked, validated, flexible, and visually 
+           pleasing style sheet. Post your files to the student web server and put the corresponding URL in the Final Project drop box.
+        7. Successful demonstration of each course objective is worth 10 points for a total of 80 points for the project.
+    -->
+        <main>
+            <section id="welcome">
+                <p>Welcome to my Web 124 Final Project where we will walk through the objectives of the course demonstrating competency in 
+                    the content outline. Click this text area to get started!</p>
+                <p>-Ray</p>   
+            </section>
+            <section id="objectives">
+                <p>Click the button to see course objectives we will be walking through.  We've already manipulated the DOM in the opening event. 
+                    This project is using JavaScript to manipulate the HTML on the page so that it appears that we are navigating to different pages, but 
+                    the url in the browser address bar will remain the same.
+                </p>
+                <button id="objButton">See Objectives</button> 
+                <div id="courseObjectives">
+                <h2>WEB 124 Course Objectives</h2>
+                    <ol>
+                        <li>Manipulate the DOM.</li>
+                        <li>Add and remove HyperText Markup Language (HTML) document nodes.</li>
+                        <li>Control the BOM.</li>
+                        <li>Enhance and validate form data.</li>
+                        <li>Create scripts using built-in JavaScript classes.</li>
+                        <li>Manipulate data in strings and arrays.</li>
+                        <li>Validate JavaScript and apply advanced debugging techniques.</li>
+                        <li>Apply coding techniques to address JavaScript security issues.</li>
+                    </ol>
+                    <p id="clickOutline">Click this button to see the Course Objectives and a complete outline of competencies in a new window for reference.</p>
+                    <button id="openTab">Open New Tab</button>
+                </div>
+            </section>
+            <section id="describeDOM">
+                <h2>Manipulating the DOM</h2>
+                <p>The DOM or Document Object Model is a representation of all the HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript 
+                    that instructs what should be displayed by a web browser.  All of the code written in the document helps a web browser make a model 
+                    of what the requested web page should look like.</p>
+                <p>We have been using JavaScipt to make changes to that model by altering the styling of sections in that document making them display or hide 
+                    as well as opening and closing a window.</p>
+                <button id="objTwo">Next Objective ></button>
+            </section>
+            <section id="nodes">
+                <h2>Add or Remove HTML Nodes</h2>
+                <p>Nodes are a plot point on the DOM that represent many different types of elements in the HTML code.  So far, we have been displaying 
+                    and hiding sections of HTML that were already created and represented on the DOM, but given the style "display: none" or "display: block" with CSS. 
+                    We haven't actually created or removed anything that wasn't already there.  If you look at the inspector, you will see elements grayed out that 
+                    are not currently being displayed.  Click the button below to remove this paragraph from the document entirely and create a different one that 
+                    is not shown in the inspector.
+                </p>
+                <button id="addRemoveNodesButton">+/- Nodes</button>
+            </section>
+            <section id="BOM">
+                <h2>Control the BOM</h2>
+                <p>The Browser Object Model contains information about the browser window.  Click the button below to see your current 
+                    url and screen dimensions displayed below.
+                </p>
+                <button id="BOMinfoButton">BOM Info</button>
+            </section>
+            <section id="browserInfo">
+                <p id=browserInfoDisplay></p>
+            </section>
+            <button id="BOMbutton">Next Objective ></button>
+            <button id=formsButton>Next Objective ></button>
+            <section id="formSection">
+                <h2>Enhance and validate form data</h2>
+                <p>JavaScript is often used to validate information that a user inputs so that it is not harmful to the webpage and can pass along 
+                    accurate information that is being asked for on the form.  JavaScript can also make a form easier or more intuitive than traditional HTML. 
+                    For example, when this objective loaded a focus method was used to place a cursor in the field of the form so that it is ready for entry. 
+                    When the input box is filled out, we are able to get or check for information about what has been entered.</p>
+                    <div id="form">
+                        <label for="nameEntry">Your Name:</label>
+                        <input type="text" id="nameEntry" name="nameEntry">
+                        <button id="submit">Submit</button>
+                    </div>
+                <p>Try clicking the submit button without entering a name and notice the alert is different than when something has been entered. 
+                    This is an example of how JavaScript can improve and validate data and the usability of a form.</p>
+                <button id="objectButton">Next Objective ></button>
+            </section>
+            <section id="objectSection">
+                <h2>JavaScript Object-Oriented Programming </h2>
+                <p>JavaScript uses objects to represent things, often something physical or tangible, in a container of information.  JavaScript.info 
+                    refers to objects as a container like a drawer holding different pieces of data.  An example might be information about the user like their name, 
+                    age, occupation, preferences, etc.  JavaScript also references objects for things that the language uses such as the window in which the user 
+                    is viewing the page in or information about the browser that is recreating the requested HTML file.
+                </p>
+                <p>JavaScript has many built-in objects to handle information and data such as Numbers, Dates, Math functions, Strings(text) and many more used for programming. 
+                   Let's use the number object for example.  First of all, it's worth noting that anything entered in an HTML input field comes into JavaScript as a text 
+                   string, so there are methods in JavaScript that can convert those numbers from text to an actual number that can be used in a mathematical function. 
+                </p>
+                <p>Using the isNan() method, we will convert the text in the field to a number and then test it.  If the text is not a number then it will not 
+                    convert to a number and test true for NaN;
+                </p>
+                <label for="numberTester">Enter a number or text:</label>
+                <input type="text" id="numberTester" name="numberTester" value=" "><br>
+                <button id="numberTestButton">Test</button>
+                <p><button id="stringButton">Next Objective ></button></p>
+            </section>
+            <section id="stringSection">
+                <h2>Strings and Arrays</h2>
+                <p>As mentioned previously, strings are text and they can be organized into a collection known as an array.  Arrays may contain other data types 
+                    as well like numbers.  Let's create an array and then access it.  Enter some colors into this text area separating them each on a new line (return).
+                </p>
+                <label for="colorArea">Enter colors:</label><br>
+                <textarea id="colorArea" rows="7" cols="20"></textarea><br>
+                <button id="colorSubmit">Submit</button>
+                <p id="colorP"></p>
+                <button id="debugButton">Next Objective ></button>
+            </section>
+            <section id="debugSection">
+                <h2>Validation and Debugging</h2>
+                <p>We've already seen in the object oriented programming section how JavaScript can be used to validate or test data that has been input 
+                    from a user which is a benefit of this language.  It's important to be able to make sure that the developer is going to get the right 
+                    type of data from a user that they need.  Another way to prevent mistakes or errors from disrupting the script is to just simply plan for 
+                    errors to happen.  If then statements are one way to do this, but JavaScript also has a syntax known as try...catch...finally to display 
+                    error messages so that the user can correct their error or for the script to keep going.  A number between 1 and 10 has been set to a variable. 
+                    Guess the number in the input box and if you're correct, an alert will display.  If incorrect, an error message will display.  Using the finally command, 
+                    a button will display for us to move on to the last objective.
+                </p>
+                <label>Choose a number between 1 and 10:</label>
+                <input type="number" name="guess" id="guess" min="0" max="10"><br>
+                <button id="guessButton">Guess</button>
+                <p><button id="securityButton">Let's move on ></button></p>
+            </section>
+            <section id="securitySection">
+                <h2>Security</h2>
+                <p>Whenever you allow a user to enter something that could be stored or displayed on a web page it is an opportunity for an attack by someone 
+                    with ill intentions.  It's important to validate form and input fields not only to make sure that you receive the type of data 
+                    that you desire, but also to protect your code from being tampered with.  Another serious vulnerability in JavaScript code is when using 
+                    methods to make changes to the DOM as demonstrated earlier, but with the document.write function or by using innerHTML to make changes to 
+                    the document.  Document.write is a sure way to ask for trouble when collecting data from a user because it rewrites the actual HTML code 
+                    rather than add to it.  innerHTML in a similar way allows a user to enter elements such as &lt;p&gt;things you don't want&lt;/p&gt;.  
+                    The best way around this is to use the DOM Manipulation method when adding new elements of text to the page or textContent as in this example 
+                    where there is already an element that we are adding text to.
+                </p>
+                <p>
+                    Paste this example code into each box to see the difference between innerHTML allowing code vs. DOM Manipulation protecting the document 
+                    from attack.<br>
+                    &lt;p id="clickme" onclick="window.open('https://www.youtube.com/watch?v=DLzxrzFCyOs?autoplay=1')";&gt;Click Me!!!&lt;/p&gt;
+                </p>
+                <p><label for="securityText1">Paste the code above into this box:</label><br>
+                <input type="text" name="securityText1" id="securityText1"><br>
+                <button id="securityTextButton1">See innerHTML Below</button></p>
+                <p><label for="securityText2">Now try pasting the code into this box:</label><br>
+                <input type="text" name="securityText2" id="securityText2"><br>
+                <button id="securityTextButton2">See textContent Below</button></p>
+                <p id="securityResult">Result:</p>
+                <button id="finishedButton">I've had enough ></button>
+            </section>
+            <section id="finishedSection">
+                <h2>Completion</h2>
+                <p>Whew! Thanks for spending so much time with these demonstrations over objectives from Web 124 JavaScript II at JCCC.  
+                    Feel free to go back and review any of the exercises by using the navigation key words below or simply refresh the browser to start over.
+                </p>
+            </section>
+        </main>
+        </div>
+    <footer>
+        <ul>
+            <li id="manipulateDOM">Manipulate DOM</li>
+            <li id="HTMLNodes">HTML Nodes</li>
+            <li id="BOMNavLink">BOM</li>
+            <li id="formsNavLink">Forms</li>
+            <li id="objectsNavLink">JS Objects</li>
+            <li id="stringsNavLink">Strings-Arrays</li>
+            <li id="validationNavLink">Validation</li>
+            <li id="securityNavLink">Security</li>
+        </ul>
+            <p>
+                <a href="mailto:rmarti98@students.jccc.edu">Ray Martin</a> Web 124 Final Project
+            </p>
+    </footer>
+    <script>
+        "use strict"
+    //1. Manipulate the DOM | Describe the DOM | Modify HTML elements | Open & close windows & tabs | Utilize the History, Location, Navigator & Screen Objects
+        
+        //Global variables for navigation
+        let welcome = document.getElementById("welcome");
+        let foot = document.getElementsByTagName("footer")[0];
+        let body = document.getElementsByTagName("body")[0];
+        let header = document.getElementsByTagName("h1")[0];
+        let objectives = document.getElementById("objectives");
+        let objButton = document.getElementById("objButton");
+        let courseObjectives = document.getElementById("courseObjectives");
+        let content = document.getElementById("contentOutline");
+        let openButton = document.getElementById("openTab");
+        let describeDOM = document.getElementById("describeDOM");
+        let obj2Button = document.getElementById("objTwo");
+        let nodeSection1 = document.getElementById("nodes");
+        let BOMbutton = document.getElementById("BOMbutton"); //This button has to exist already in order to have an event listener on it, but it's hidden
+        let BOMsection = document.getElementById('BOM');
+        let BOMinfoButton = document.getElementById("BOMinfoButton");
+        let browserInfo = document.getElementById("browserInfo");
+        let browserInfoDisplay = document.getElementById("browserInfoDisplay");
+        let formSection = document.getElementById("formSection");
+        let formsButton = document.getElementById("formsButton");
+        let objectButton = document.getElementById("objectButton");
+        let objectSection = document.getElementById("objectSection");
+        let stringButton = document.getElementById("stringButton");
+        let stringSection = document.getElementById("stringSection");
+        let debugSection = document.getElementById("debugSection");
+        let debugButton = document.getElementById("debugButton");
+        let securitySection = document.getElementById("securitySection");
+        let securityButton = document.getElementById("securityButton");
+        
+        //This takes us from landing page to the 1st objective
+        function startup() {
+            body.removeAttribute("id");
+            welcome.style.display = "none";
+            header.style.display = "block";
+            objectives.style.display = "block";
+            foot.style.display = "block";
+            console.log("1. startup()");
+        }
+        welcome.addEventListener('click', startup)
+        
+        //Displays the course objectives and a button to open a new window
+        function showObjectives() {
+            courseObjectives.style.display = "block";
+            objButton.style.display = "none";
+            console.log("1. showObjectives()");
+        }
+        objButton.addEventListener("click", showObjectives);
+
+        //Open a new window showing competencies
+        function newTab() {
+            let newWindow = window.open("http://students.jccc.edu/rmarti98/web124/final/final2.html", "_blank");
+            let clickOutline = document.getElementById("clickOutline");
+            console.log("1. newTab()");
+            openButton.style.display = "none";
+            clickOutline.style.display = "none";
+            objectives.style.display = "none";
+            describeDOM.style.display = "block";
+        }
+        openButton.addEventListener('click', newTab);
+
+        
+        //Nav Reset of Manipulate DOM objective
+        let DOM = document.getElementById("manipulateDOM");
+        function domNav() {
+            let nodes2 = document.getElementById("nodeSection2");
+            header.style.display = "block";
+            foot.style.display = "block";
+            welcome.style.display = "none";
+            objectives.style.display = "block";
+            objButton.style.display = "block";
+            courseObjectives.style.display = "none";
+            openButton.style.display = "block";
+            describeDOM.style.display = "none";
+            if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+            } else nodes2.style.display = "none";
+            BOMsection.style.display = "none";
+            browserInfoDisplay.style.display = "none";
+            BOMbutton.style.display = "none";
+            formsButton.style.display = "none";
+            formSection.style.display = "none";
+            objectSection.style.display = "none";
+            stringSection.style.display = "none";
+            debugSection.style.display = "none";
+            securitySection.style.display = "none";
+            finishedSection.style.display = "none";
+        }
+        DOM.addEventListener('click', domNav);
+
+    //2. Add document nodes. | Remove document nodes.
+        //Display the Document Nodes Section
+        function docNodes() {
+            describeDOM.style.display = "none";
+            nodeSection1.style.display = "block";
+            console.log("2. docNodes()");
+        }
+        obj2Button.addEventListener('click', docNodes);
+        
+        //add & remove a section rather than display/hide
+        function nodeSwap() {
+            nodeSection1.remove(); //remove the section element
+            let nodeSection2 = document.createElement('section'); //create a new section element
+            let newP = document.createElement('p'); //create a new p element with the tet below
+            let newText = document.createTextNode("The original section has been removed and we have now added a new section with this text inside it!");
+            let main = document.getElementsByTagName('main')[0]; //find the main elements so we can place section inside them
+            main.appendChild(nodeSection2); //put section inside main
+            nodeSection2.setAttribute('id', 'nodeSection2'); //give new section an id
+            nodeSection2.appendChild(newP); //put p inside section
+            newP.appendChild(newText); //put the text inside p
+            nodeSection2.appendChild(BOMbutton); //place this existing hidden button inside the section
+            BOMbutton.style.display = "block"; //show next objective button
+            console.log("2. nodeSwap()");
+        }
+        let nodesButton = document.getElementById("addRemoveNodesButton");
+        nodesButton.addEventListener('click', nodeSwap);
+
+        //Nav Reset of Nodes Objective
+        let nodeNavLink = document.getElementById("HTMLNodes");
+        function nodeNav() {
+            let nodes2 = document.getElementById("nodeSection2");
+            header.style.display = "block";
+            foot.style.display = "block";
+            welcome.style.display = "none";
+            objectives.style.display = "none";
+            objButton.style.display = "none";
+            courseObjectives.style.display = "block";
+            openButton.style.display = "block";
+            describeDOM.style.display = "none";
+            if (nodes2 === null) {
+                nodeSection1.style.display = "block";
+            } else nodes2.style.display = "block";
+            BOMsection.style.display = "none";
+            browserInfoDisplay.style.display = "none";
+            BOMbutton.style.display = "block";
+            formsButton.style.display = "none";
+            formSection.style.display = "none";
+            objectSection.style.display = "none";
+            stringSection.style.display = "none";
+            debugSection.style.display = "none";
+            securitySection.style.display = "none";
+            finishedSection.style.display = "none";
+        }
+        nodeNavLink.addEventListener('click', nodeNav);
+
+
+
+    //3. BOM | Open and close windows | Access with the History object | Use the Location object | Use the Navigator object | Manipulate the Screen object
+        //Display the BOM Section
+        function showBOMsection() {
+            let nodes2 = document.getElementById("nodeSection2");
+            objectives.style.display = "none";
+            BOMsection.style.display = "block";
+            BOMbutton.style.display = "none";
+            nodes2.style.display = "none";
+            console.log('3. showBOMsection()')
+        }
+        BOMbutton.addEventListener('click', showBOMsection);
+
+        //Show us our current location url and information about the size of our window
+        function showBOMinfo() {
+            browserInfo.style.display = "block";
+            browserInfo.style.display = "block";
+            browserInfoDisplay.style.display = "block";
+            browserInfoDisplay.textContent = "Your current URL is " + location + " and your screen is " + screen.width + "px by " + screen.height + "px.";
+            BOMinfoButton.style.display = "none";
+            formsButton.style.display = "block";
+            console.log("3. showBOMinfo()");
+        }
+        BOMinfoButton.addEventListener('click', showBOMinfo);
+
+        //BOM Nav Reset
+        let BOMNavLink = document.getElementById("BOMNavLink");
+        function BOMNav() {
+            let nodes2 = document.getElementById("nodeSection2");
+            header.style.display = "block";
+            foot.style.display = "block";
+            welcome.style.display = "none";
+            objectives.style.display = "none";
+            objButton.style.display = "none";
+            courseObjectives.style.display = "none";
+            openButton.style.display = "none";
+            describeDOM.style.display = "none";
+            if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+            } else nodes2.style.display = "none";
+            BOMsection.style.display = "block";
+            BOMinfoButton.style.display = "block";
+            browserInfoDisplay.style.display = "none";
+            BOMbutton.style.display = "none";
+            formsButton.style.display = "none";
+            formSection.style.display = "none";
+            objectSection.style.display = "none";
+            stringSection.style.display = "none";
+            debugSection.style.display = "none";
+            securitySection.style.display = "none";
+            finishedSection.style.display = "none";
+        }
+        BOMNavLink.addEventListener('click', BOMNav);
+
+
+    //4. Forms | Improve form usability | Program custom form validation | Identify data passed through a query string.
+        //focus on the form and validate entry
+        let nameEntry = document.getElementById("nameEntry");
+        function formLoad() {
+            formSection.style.display = "block";
+            BOMsection.style.display = "none";
+            browserInfoDisplay.style.display = "none";
+            formsButton.style.display = "none";
+            nameEntry.focus();
+            console.log("4. formLoad()");
+        }
+        formsButton.addEventListener('click', formLoad);
+
+        //validate the form
+        let submit = document.getElementById('submit');
+        function submitForm() {
+            let inputName = document.getElementById("nameEntry").value; //variable needed to be inside the function
+            let length = inputName.length;
+            if ( inputName.length > 0 ) {
+                alert("Hi " + inputName + "!" + " Your Name has " + length + " characters.");
+            } else {
+                alert ("Please enter your name in the field.");
+            }
+            objectButton.style.display = "block";
+            console.log("4. submitForm()");
+        }
+        submit.addEventListener('click', submitForm);
+
+        //Navigation for the Forms Section
+        let formsNavLink = document.getElementById("formsNavLink");
+        function formsNav() {
+            let nodes2 = document.getElementById("nodeSection2");
+            header.style.display = "block";
+            foot.style.display = "block";
+            welcome.style.display = "none";
+            objectives.style.display = "none";
+            objButton.style.display = "none";
+            courseObjectives.style.display = "none";
+            openButton.style.display = "none";
+            describeDOM.style.display = "none";
+            if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+            } else nodes2.style.display = "none";
+            BOMsection.style.display = "none";
+            BOMinfoButton.style.display = "none";
+            browserInfoDisplay.style.display = "none";
+            BOMbutton.style.display = "none";
+            formsButton.style.display = "none";
+            formSection.style.display = "block";
+            objectSection.style.display = "none";
+            stringSection.style.display = "none";
+            debugSection.style.display = "none";
+            securitySection.style.display = "none";
+            finishedSection.style.display = "none";
+        }
+        formsNavLink.addEventListener('click', formsNav);
+
+    /* 5. JavaScript Object-Oriented Programming | Explain the principles of object-oriented programming | Create and use objects using the Date class 
+       Create and use objects using the Number class | Create and use objects using the Math class | Define custom objects */
+
+       //Nav to Object Section
+       function showObjectSection() {
+           formSection.style.display = "none";
+           objectSection.style.display = "block";
+           console.log('5. showObjectSection()');
+       }
+       objectButton.addEventListener('click', showObjectSection);
+
+       //Test for a number
+       let numberTestButton = document.getElementById("numberTestButton");
+       function testForNumbers() {
+           let numberTester = document.getElementById("numberTester").value;
+           if ( isNaN(numberTester) == false ) {
+               alert("That's a number.");
+           } else {
+               alert("That's not a number!");
+           }
+           stringButton.style.display = "block";
+           console.log("5. testForNumbers()");
+       }
+       numberTestButton.addEventListener('click', testForNumbers);
+
+       //Reset for Navigating to this section
+       let objectsNavLink = document.getElementById("objectsNavLink");
+       function objectsNav() {
+            let nodes2 = document.getElementById("nodeSection2");
+            header.style.display = "block";
+            foot.style.display = "block";
+            welcome.style.display = "none";
+            objectives.style.display = "none";
+            objButton.style.display = "none";
+            courseObjectives.style.display = "none";
+            openButton.style.display = "none";
+            describeDOM.style.display = "none";
+            if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+            } else nodes2.style.display = "none";
+            BOMsection.style.display = "none";
+            BOMinfoButton.style.display = "none";
+            browserInfoDisplay.style.display = "none";
+            BOMbutton.style.display = "none";
+            formsButton.style.display = "none";
+            formSection.style.display = "none";
+            objectSection.style.display = "block";
+            stringSection.style.display = "none";
+            debugSection.style.display = "none";
+            securitySection.style.display = "none";
+            finishedSection.style.display = "none";
+        }
+        objectsNavLink.addEventListener('click', objectsNav);
+
+    //6. Strings and Arrays | Find, extract, combine and compare strings | Code regular expressions | Find, extract, sort and combine arrays
+       //Nav to Strings & Arrays section
+       function showStringSection() {
+        objectSection.style.display = "none";
+            stringSection.style.display = "block";
+        console.log("6. showStringSection");
+       }
+       stringButton.addEventListener('click', showStringSection);
+
+       //put textarea text into an array and search for my favorite color
+       let colorSubmit = document.getElementById("colorSubmit");
+       function makeColorArray () {
+           let colorArea = document.getElementById("colorArea").value;
+           let colors = [];
+           let colorP = document.getElementById("colorP");
+           colors = colorArea.split('\n'); //takes text from the text are and puts it into an array on the variable we declared
+           console.log(colors);
+           colorP.textContent = "You entered: " + colors.length + " colors- ";
+           let i=0;
+           while ( i < colors.length ) {
+               colorP.textContent += colors[i] + ", "
+               i++;
+           }
+           debugButton.style.display = "block";
+           console.log("6. makeColorArray()");
+           }
+           colorSubmit.addEventListener('click', makeColorArray);
+           
+           //Reset String Section Nav
+           let stringsNavLink = document.getElementById("stringsNavLink");
+           function stringsNav() {
+             let nodes2 = document.getElementById("nodeSection2");
+             header.style.display = "block";
+             foot.style.display = "block";
+             welcome.style.display = "none";
+             objectives.style.display = "none";
+             objButton.style.display = "none";
+             courseObjectives.style.display = "none";
+             openButton.style.display = "none";
+             describeDOM.style.display = "none";
+             if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+             } else nodes2.style.display = "none";
+             BOMsection.style.display = "none";
+             BOMinfoButton.style.display = "none";
+             browserInfoDisplay.style.display = "none";
+             BOMbutton.style.display = "none";
+             formsButton.style.display = "none";
+             formSection.style.display = "none";
+             objectSection.style.display = "none";
+             stringSection.style.display = "block";
+             debugSection.style.display = "none";
+             securitySection.style.display = "none";
+             finishedSection.style.display = "none";
+        }
+        stringsNavLink.addEventListener('click', stringsNav);
+
+    //7. Validation and Debugging | Use lint to improve and fix code | Write error handling code | Use debugger windows from all major browsers
+           //Navigate to Debugging Section
+           function showDebugSection() {
+               stringSection.style.display = "none";
+               debugSection.style.display = "block";
+               console.log("7. showDebugSection()");               
+           }
+           debugButton.addEventListener('click', showDebugSection);
+
+           //Try...Catch...Finally Example
+           let num = 5;
+           function debug() {
+            let guess = document.getElementById("guess").value;
+            let guessButton = document.getElementById("guessButton");
+               try {
+                if ( guess == "" ) throw  "Select a number!"
+                if ( guess != num )  throw "That's not it. Try again!";
+                if ( guess == num )  throw "You got it!"
+               } catch(err) {
+                alert(err);
+               } finally {
+                   securityButton.style.display = "block";
+               }
+               console.log("7. debug()")
+           }
+           guessButton.addEventListener('click', debug);
+
+           //Nav to Debug Section
+           let validationNavLink = document.getElementById("validationNavLink"); 
+           function bugNav() {
+             let nodes2 = document.getElementById("nodeSection2");
+             header.style.display = "block";
+             foot.style.display = "block";
+             welcome.style.display = "none";
+             objectives.style.display = "none";
+             objButton.style.display = "none";
+             courseObjectives.style.display = "none";
+             openButton.style.display = "none";
+             describeDOM.style.display = "none";
+             if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+             } else nodes2.style.display = "none";
+             BOMsection.style.display = "none";
+             BOMinfoButton.style.display = "none";
+             browserInfoDisplay.style.display = "none";
+             BOMbutton.style.display = "none";
+             formsButton.style.display = "none";
+             formSection.style.display = "none";
+             objectSection.style.display = "none";
+             stringSection.style.display = "none";
+             debugSection.style.display = "block";
+             securitySection.style.display = "none";
+             finishedSection.style.display = "none";
+        }
+        validationNavLink.addEventListener('click', bugNav);
+
+    //8. Security | Write code to store state information | Query strings | Hidden form fields | Investigate and apply current security holes and techniques
+        //Navigate to security section
+        function showSecuritySection() {
+            debugSection.style.display = "none";
+            securitySection.style.display = "block";
+            console.log("8. showSecuritySection()")
+        }
+        securityButton.addEventListener('click', showSecuritySection);
+
+        //wrap code in functions and don't allow user content to add to the page, no innerHTML or doc rewrite
+        let securityResult = document.getElementById("securityResult");
+        let securityTextButton1 = document.getElementById("securityTextButton1");
+        let securityTextButton2 = document.getElementById("securityTextButton2");
+        function securityTest1() {
+            let textSample1 = document.getElementById("securityText1").value;
+            securityResult.innerHTML = textSample1;
+            console.log("8. securityTest1");
+        }
+        securityTextButton1.addEventListener('click', securityTest1);
+
+        let finishedButton = document.getElementById("finishedButton");
+        function securityTest2() {
+            let textSample1 = document.getElementById("securityText2").value;
+            securityResult.textContent = textSample1;
+            finishedButton.style.display = "block";
+            console.log("8. securityTest2");
+        }
+        securityTextButton2.addEventListener('click', securityTest2);
+
+        //Completion Section
+        function showFinishedSection() {
+            securitySection.style.display = "none";
+            finishedSection.style.display = "block";
+            console.log("8. finishedSection()");
+        }
+        finishedButton.addEventListener('click', showFinishedSection);
+
+        //Security Section Nav
+        let securityNavLink = document.getElementById("securityNavLink"); 
+           function securityNav() {
+             let nodes2 = document.getElementById("nodeSection2");
+             header.style.display = "block";
+             foot.style.display = "block";
+             welcome.style.display = "none";
+             objectives.style.display = "none";
+             objButton.style.display = "none";
+             courseObjectives.style.display = "none";
+             openButton.style.display = "none";
+             describeDOM.style.display = "none";
+             if (nodes2 === null) {
+                nodeSection1.style.display = "none";
+             } else nodes2.style.display = "none";
+             BOMsection.style.display = "none";
+             BOMinfoButton.style.display = "none";
+             browserInfoDisplay.style.display = "none";
+             BOMbutton.style.display = "none";
+             formsButton.style.display = "none";
+             formSection.style.display = "none";
+             objectSection.style.display = "none";
+             stringSection.style.display = "none";
+             debugSection.style.display = "none";
+             securitySection.style.display = "block";
+             finishedSection.style.display = "none";
+        }
+        securityNavLink.addEventListener('click', securityNav);
+
+        //Maybe some bonus points for all the navigation? ;)
+    </script>
+    </body>
+</html>
